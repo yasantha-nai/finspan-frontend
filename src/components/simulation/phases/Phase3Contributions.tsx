@@ -19,7 +19,7 @@ import { OnboardingStepCard } from '@/components/onboarding/OnboardingStepCard';
 export function Phase3Contributions() {
   const { inputs, updateInput } = useSimulation();
   const theme = useTheme();
-  
+
   const isMarried = inputs.taxFilingStatus === 'married_joint';
 
   // Consolidated balances - simple mode mappings
@@ -32,7 +32,7 @@ export function Phase3Contributions() {
   const limit401k = isCatchUp ? baseLimit401k + catchUp401k : baseLimit401k;
 
   // Summary calculations - robust, no undefined vars
-  const totalAnnualContribution = (inputs.contribDeferred || 0) + (inputs.contribTaxable || 0) + (inputs.contribRoth || 0);
+  const totalAnnualContribution = (inputs.contribDeferred || 0) + (inputs.contribRoth || 0);
 
   return (
     <OnboardingStepCard
@@ -69,7 +69,7 @@ export function Phase3Contributions() {
             }}
             helperText={showDetailedBalances ? "Sum of your accounts below" : "All your retirement accounts combined"}
           />
-          
+
           {/* 2. Spouse Total Savings (if married) */}
           {isMarried && (
             <TextField
@@ -141,7 +141,7 @@ export function Phase3Contributions() {
                   />
                 </Box>
               </Box>
-              
+
               {/* Spouse Accounts (if married) */}
               {isMarried && (
                 <Box>

@@ -141,12 +141,7 @@ export const MonteCarloResults = ({ results }: MonteCarloResultsProps) => {
             },
         },
         fill: {
-            type: 'gradient',
-            gradient: {
-                shadeIntensity: 1,
-                opacityFrom: 0.4,
-                opacityTo: 0.1,
-            },
+            opacity: 1,
         },
         tooltip: {
             y: {
