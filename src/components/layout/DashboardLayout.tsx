@@ -5,6 +5,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { muiTheme } from '@/theme/mui-theme';
 import { NavSidebar, NavItem } from './NavSidebar';
 import { DashboardHeader } from './DashboardHeader';
+import { AIChatToolbar } from '@/components/ai/AIChatToolbar';
 
 interface DashboardLayoutProps {
     children: ReactNode;
@@ -56,6 +57,9 @@ export function DashboardLayout({ children, navItems, title = 'Dashboard' }: Das
                     {/* Page Content */}
                     {children}
                 </Box>
+
+                {/* AI Chat Toolbar */}
+                <AIChatToolbar />
             </Box>
         </ThemeProvider>
     );
