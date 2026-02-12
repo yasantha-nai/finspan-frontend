@@ -1,0 +1,375 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap");
+@import "@fontsource/plus-jakarta-sans/400.css";
+@import "@fontsource/plus-jakarta-sans/500.css";
+@import "@fontsource/plus-jakarta-sans/600.css";
+@import "@fontsource/plus-jakarta-sans/700.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Retirement Simulator Design System
+   Colors: Trust-focused, non-judgmental, financially sophisticated
+   All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Core backgrounds */
+    --background: 220 20% 98%;
+    --foreground: 222 47% 11%;
+
+    /* Cards & Surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --card-elevated: 0 0% 100%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary - Deep Navy (Trust & Stability) */
+    --primary: 222 47% 18%;
+    --primary-foreground: 210 40% 98%;
+    --primary-soft: 222 35% 92%;
+
+    /* Secondary - Teal (Growth & Forward-thinking) */
+    --secondary: 174 62% 47%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-soft: 174 45% 92%;
+
+    /* Muted & Subtle */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    /* Accent - Soft Purple (Roth/Special Actions) */
+    --accent: 262 52% 55%;
+    --accent-foreground: 0 0% 100%;
+    --accent-soft: 262 40% 94%;
+
+    /* Success - Soft Green (Growth, not alarm) */
+    --success: 158 64% 42%;
+    --success-foreground: 0 0% 100%;
+    --success-soft: 158 45% 92%;
+
+    /* Warning - Constructive Amber (Adjustment, not panic) */
+    --warning: 38 92% 50%;
+    --warning-foreground: 38 92% 10%;
+    --warning-soft: 38 80% 94%;
+
+    /* Destructive - Kept but rarely used */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 222 47% 18%;
+
+    /* Radius - Adjusted for standardized Apple-like feel */
+    --radius: 12px;
+
+    /* Asset Bucket Colors */
+    --bucket-taxable: 200 80% 50%;
+    --bucket-deferred: 262 52% 55%;
+    --bucket-roth: 158 64% 42%;
+
+    /* Chart Colors */
+    --chart-income: 200 80% 55%;
+    --chart-expenses: 220 9% 60%;
+    --chart-assets: 174 62% 47%;
+    --chart-shortfall: 38 80% 60%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(222 47% 18%) 0%, hsl(222 47% 28%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(158 64% 42%) 0%, hsl(174 62% 47%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(262 52% 55%) 0%, hsl(280 60% 60%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(220 14% 10% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(220 14% 10% / 0.08), 0 2px 4px -2px hsl(220 14% 10% / 0.04);
+    --shadow-lg: 0 10px 15px -3px hsl(220 14% 10% / 0.1), 0 4px 6px -4px hsl(220 14% 10% / 0.05);
+    --shadow-xl: 0 20px 25px -5px hsl(220 14% 10% / 0.12), 0 8px 10px -6px hsl(220 14% 10% / 0.06);
+    --shadow-card: 0 1px 3px 0 hsl(220 14% 10% / 0.06), 0 1px 2px -1px hsl(220 14% 10% / 0.06);
+    --shadow-elevated: 0 4px 12px 0 hsl(220 14% 10% / 0.08);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 222 47% 18%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 222 47% 18%;
+
+    /* Wealth visualization colors */
+    --wealth-taxable: 170 45% 55%;
+    --wealth-taxable-light: 170 45% 85%;
+    --wealth-deferred: 35 70% 60%;
+    --wealth-deferred-light: 35 70% 88%;
+    --wealth-roth: 280 35% 65%;
+    --wealth-roth-light: 280 35% 90%;
+
+    /* Life status colors */
+    --status-safe: 150 40% 50%;
+    --status-safe-bg: 150 40% 95%;
+    --status-caution: 40 70% 55%;
+    --status-caution-bg: 40 70% 95%;
+    --status-aware: 15 60% 60%;
+    --status-aware-bg: 15 60% 95%;
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 40% 10%;
+    --card-foreground: 210 40% 98%;
+    --card-elevated: 222 35% 12%;
+
+    --popover: 222 40% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222 47% 11%;
+    --primary-soft: 222 30% 20%;
+
+    --secondary: 174 62% 52%;
+    --secondary-foreground: 222 47% 11%;
+    --secondary-soft: 174 30% 15%;
+
+    --muted: 222 30% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 262 52% 60%;
+    --accent-foreground: 0 0% 100%;
+    --accent-soft: 262 30% 18%;
+
+    --success: 158 64% 48%;
+    --success-foreground: 0 0% 100%;
+    --success-soft: 158 30% 15%;
+
+    --warning: 38 92% 55%;
+    --warning-foreground: 38 92% 10%;
+    --warning-soft: 38 40% 15%;
+
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 222 25% 20%;
+    --input: 222 25% 20%;
+    --ring: 210 40% 80%;
+
+    --bucket-taxable: 200 70% 55%;
+    --bucket-deferred: 262 50% 60%;
+    --bucket-roth: 158 55% 50%;
+
+    --chart-income: 200 70% 60%;
+    --chart-expenses: 220 12% 55%;
+    --chart-assets: 174 55% 52%;
+    --chart-shortfall: 38 70% 55%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(222 47% 12%) 0%, hsl(222 40% 20%) 100%);
+
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.2);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.3);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.4);
+
+    --sidebar-background: 222 40% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 174 62% 52%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 222 30% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 25% 18%;
+    --sidebar-ring: 174 62% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Inter", system-ui, sans-serif;
+    margin: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  }
+
+  /* Tabular figures for financial data */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/50 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/20 rounded-full hover:bg-muted-foreground/30;
+  }
+}
+
+@layer utilities {
+
+  /* Glass morphism effect */
+  .glass {
+    @apply backdrop-blur-md bg-card/80;
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  /* Financial data styling */
+  .currency {
+    @apply tabular-nums font-medium;
+  }
+
+  .percentage {
+    @apply tabular-nums text-muted-foreground;
+  }
+
+  /* Gradient text */
+  .text-gradient-hero {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-success {
+    background: var(--gradient-success);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* LifePlan Specific Components */
+  .text-gradient {
+    @apply bg-gradient-to-r from-success to-secondary bg-clip-text text-transparent;
+  }
+
+  .btn-hero {
+    @apply bg-success text-white px-8 py-4 rounded-md font-semibold text-lg;
+    @apply hover:bg-success/90 transition-all duration-300;
+    @apply shadow-md hover:shadow-lg hover:shadow-success/20;
+    @apply transform hover:-translate-y-0.5 inline-flex items-center justify-center;
+  }
+
+  .btn-hero-outline {
+    @apply border-2 border-success text-success px-8 py-4 rounded-xl font-semibold text-lg;
+    @apply hover:bg-success hover:text-white transition-all duration-300;
+  }
+
+  /* Bento Grid Cards */
+  .bento-card {
+    @apply bg-card rounded-lg p-6 shadow-sm border border-border/50;
+    @apply hover:shadow-md hover:border-success/20 transition-all duration-300;
+  }
+
+  .bento-card-highlight {
+    @apply bg-gradient-to-br from-success/5 to-success/10 rounded-lg p-6;
+    @apply border border-success/20 shadow-md;
+  }
+
+  /* Metric Cards */
+  .metric-value {
+    @apply text-3xl md:text-4xl font-bold text-foreground;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .metric-label {
+    @apply text-sm text-muted-foreground font-medium;
+  }
+
+  .badge-success {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium;
+    @apply bg-success/10 text-success;
+  }
+
+  .container-wide {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Card variants */
+  .card-elevated {
+    @apply bg-card-elevated shadow-elevated;
+  }
+
+  .wealth-gradient-taxable {
+    background: linear-gradient(180deg, hsl(var(--wealth-taxable)) 0%, hsl(var(--wealth-taxable-light)) 100%);
+  }
+
+  .wealth-gradient-deferred {
+    background: linear-gradient(180deg, hsl(var(--wealth-deferred)) 0%, hsl(var(--wealth-deferred-light)) 100%);
+  }
+
+  .wealth-gradient-roth {
+    background: linear-gradient(180deg, hsl(var(--wealth-roth)) 0%, hsl(var(--wealth-roth-light)) 100%);
+  }
+
+  .insight-card {
+    @apply rounded-2xl p-5 transition-all duration-500 ease-out;
+    background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--muted) / 0.5) 100%);
+    box-shadow: 0 4px 24px -8px hsl(var(--foreground) / 0.08);
+  }
+
+  .insight-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px -8px hsl(var(--foreground) / 0.12);
+  }
+
+  .life-event-block {
+    @apply rounded-xl px-3 py-2 cursor-grab active:cursor-grabbing transition-all duration-200;
+    box-shadow: 0 2px 8px -2px hsl(var(--foreground) / 0.1);
+  }
+
+  .life-event-block:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 16px -4px hsl(var(--foreground) / 0.15);
+  }
+
+  .chart-glow {
+    filter: drop-shadow(0 4px 12px hsl(var(--wealth-taxable) / 0.3));
+  }
+
+  .age-cursor {
+    @apply absolute top-0 bottom-0 w-0.5 pointer-events-none;
+    background: linear-gradient(180deg, hsl(var(--primary)) 0%, hsl(var(--primary) / 0.3) 100%);
+    box-shadow: 0 0 20px 4px hsl(var(--primary) / 0.2);
+  }
+
+  .status-safe {
+    @apply bg-[hsl(var(--status-safe-bg))] text-[hsl(var(--status-safe))];
+  }
+
+  .status-caution {
+    @apply bg-[hsl(var(--status-caution-bg))] text-[hsl(var(--status-caution))];
+  }
+
+  .status-aware {
+    @apply bg-[hsl(var(--status-aware-bg))] text-[hsl(var(--status-aware))];
+  }
+}
